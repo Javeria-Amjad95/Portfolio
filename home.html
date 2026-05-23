@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Javeria Amjad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1200px;
+            height: 600px;
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .left {
+            flex: 1;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid #ddd;
+        }
+
+        .right {
+            flex: 1;
+            background: url('profile pic.jpeg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    background-color: #f7b731;
+    padding: 10px;
+    border-radius: 50px; /* Make the navbar oval */
+}
+
+.navbar a {
+    color: black;
+    font-size: 20px;
+    margin: 10px 0;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50px; /* Make the individual links oval */
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover, .navbar a.active {
+    background-color: #e6a823;
+}
+
+.navbar a i {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.navbar a.active i {
+    color: white; /* Make the icon white for the active link */
+}
+
+
+        .navbar a:hover, .navbar a.active {
+            background-color: #e6a823;
+        }
+
+        .navbar a i {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .navbar a.active i {
+            color: white;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 48px;
+            margin: 10px 0;
+        }
+
+        h2 span {
+            color: #f7b731;
+            opacity: 0.8;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: black;
+            background-color: #f7b731;
+            font-weight: bold;
+            margin: 10px 0;
+            padding: 5px;
+            display: inline-block;
+            width: fit-content;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 12px;
+            background-color: #f7b731;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e6a823;
+        }
+
+        .cta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .cta a {
+            text-decoration: none;
+            background-color: #ebbe0b;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta a:hover {
+            background-color: #f4a261;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <h1>HI THERE!</h1>
+            <h2>I'M <span>Javeria Amjad</span></h2>
+            <div class="subtitle">SOFTWARE ENGINEERING STUDENT</div>
+            <p>Hello! I am a passionate Software Engineering student focusing on web development and problem-solving. I specialize in frontend development, creating intuitive and user-friendly websites.</p>
+           
+
+            <div class="cta">
+                <a href="about2.html">Learn More About Me</a>
+                <a href="portfolio.html">Check Out My Projects</a>
+            </div>
+        </div>
+        <div class="right">
+            <!-- Navbar -->
+            <div class="navbar">
+                <a href="home.html" class="active"><i class="fas fa-home"></i></a>
+                <a href="about2.html"><i class="fas fa-user"></i></a>
+                <a href="resume2.html"><i class="fas fa-file-alt"></i></a>
+                <a href="portfolio.html"><i class="fas fa-briefcase"></i></a>
+                <a href="testimonial.html"><i class="fas fa-comments"></i></a>
+                <a href="contact2.html"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarLinks = document.querySelectorAll('.navbar a');
+            navbarLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navbarLinks.forEach(navLink => navLink.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

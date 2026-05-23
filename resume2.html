@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Javeria Amjad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f1f1f1;
+            padding: 50px;
+            display: flex;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 42px;
+        font-weight: 900;
+        color: #ffbf00;
+        margin-bottom: 30px;
+        text-align: center;
+        padding-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .skills, .experience, .education {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+            border-bottom: 2px solid #f4a261;
+            padding-bottom: 5px;
+        }
+
+        .skills-list, .experience-list, .education-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills-list li, .experience-list li, .education-list li {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .skills-list li span, .experience-list li span, .education-list li span {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .experience-list li p, .education-list li p {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+
+        .contact-info div {
+            flex: 1;
+            text-align: center;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: #f4a261;
+            font-size: 18px;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #333;
+        }
+
+        .navbar {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            background-color: #f7b731;
+            padding: 10px;
+            border-radius: 50px;
+            box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            color: black;
+            font-size: 20px;
+            margin: 10px 0;
+            text-decoration: none;
+            text-align: center;
+            padding: 10px;
+            border-radius: 50px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover, .navbar a.active {
+            background-color: #e6a823;
+        }
+
+        .navbar a i {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .navbar a.active i {
+            color: white;
+        }
+
+        .sidebar {
+            width: 220px;
+            height: 100vh;
+            padding: 20px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background: linear-gradient(to bottom, #f4a261, #ebbe0b);
+            box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            z-index: 100;
+        }
+        .sidebar img {
+            width: 120%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 25px;
+        }
+
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 10px;
+            text-align: center;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: rgba(255, 255, 255, 0.35);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+            transform: translateX(10px);
+        }
+
+        .navbar {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    background-color: #f7b731;
+    padding: 10px;
+    border-radius: 50px; /* Make the navbar oval */
+    box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar a {
+    color: black;
+    font-size: 20px;
+    margin: 10px 0;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50px; /* Make the individual links oval */
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover, .navbar a.active {
+    background-color: #e6a823;
+}
+
+.navbar a i {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.navbar a.active i {
+    color: white; /* Make the icon white for the active link */
+}
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                margin-left: 0; /* Remove margin for small screens */
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .skills-list li, .experience-list li, .education-list li {
+                font-size: 14px;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 10px;
+                display: flex;
+                justify-content: flex-start;
+            }
+
+            .navbar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <img src="profile pic.jpeg" alt="Profile Picture" />
+        <nav>
+          <a href="home.html"><i class="fas fa-home"></i> Home</a>
+          <a href="about2.html"><i class="fas fa-user"></i> About Me</a>
+          <a href="resume2.html"><i class="fas fa-file-alt"></i> Resume</a>
+          <a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a>
+          <a href="testimonial.html"><i class="fas fa-comments"></i> Testimonials</a>
+          <a href="contact2.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+      </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Javeria Amjad</h1>
+            <p>Software Engineering Student | Web Developer | Problem Solver</p>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="skills">
+            <div class="section-title">Skills</div>
+            <ul class="skills-list">
+                <li><span>Frontend Development:</span> HTML, CSS, JavaScript, React</li>
+                <li><span>Backend Development:</span> Node.js, Express.js, MongoDB</li>
+                <li><span>Languages:</span> C++, Python, Java</li>
+                <li><span>Version Control:</span> Git, GitHub</li>
+                <li><span>Tools:</span> Visual Studio Code, Postman, Figma</li>
+            </ul>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="experience">
+            <div class="section-title">Experience</div>
+            <ul class="experience-list">
+                <li>
+                    <span>Frontend Developer Intern - XYZ Company</span> <br>
+                    <p>July 2023 - September 2023</p>
+                    <p>Developed responsive user interfaces using HTML, CSS, and JavaScript for various client projects. Worked closely with senior developers to ensure a smooth user experience.</p>
+                </li>
+                <li>
+                    <span>Software Engineering Intern - ABC Technologies</span> <br>
+                    <p>January 2023 - April 2023</p>
+                    <p>Worked on backend development and API integration using Node.js and Express.js. Assisted in the design and implementation of database schemas using MongoDB.</p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Education Section -->
+        <div class="education">
+            <div class="section-title">Education</div>
+            <ul class="education-list">
+                <li>
+                    <span>BS Software Engineering - National University of Modern Languages (NUML)</span> <br>
+                    <p>August 2022 - Present</p>
+                </li>
+                <li>
+                    <span>Intermediate (Pre-Engineering) - [Your College Name]</span> <br>
+                    <p>2019 - 2021</p>
+                </li>
+                <li>
+                    <span>Matriculation - [Your School Name]</span> <br>
+                    <p>2017 - 2019</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="navbar">
+            <a href="home.html" ><i class="fas fa-home"></i></a>
+            <a href="about2.html"><i class="fas fa-user"></i></a>
+            <a href="resume2.html"  class="active"><i class="fas fa-file-alt"></i></a>
+            <a href="portfolio.html"><i class="fas fa-briefcase"></i></a>
+            <a href="testimonial.html"><i class="fas fa-comments"></i></a>
+            <a href="contact2.html"><i class="fas fa-envelope"></i></a>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-info">
+            <div>
+                <a href="mailto:javeriaamjad@example.com"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+            <div>
+                <a href="tel:+123456789"><i class="fas fa-phone"></i> Phone</a>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/javeria-amjad"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

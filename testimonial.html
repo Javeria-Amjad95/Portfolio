@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonials - Javeria-Amjad</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* General Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: #333;
+      }
+
+      .container {
+        display: flex;
+        width: 100%;
+        min-height: 100vh;
+      }
+
+      /* Sidebar Styles */
+      .sidebar {
+        background: #ffbf00;
+        flex: 0.5; /* Reduced width of the sidebar */
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+      }
+      .sidebar img {
+            width: 120%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 25px;
+        }
+      .sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    justify-content: center; /* Centering nav items horizontally */
+}
+
+
+.sidebar a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 10px;
+            text-align: center;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: rgba(255, 255, 255, 0.35);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+            transform: translateX(10px);
+        }
+
+      /* Main Content Styles */
+      .content {
+        flex: 3;
+        padding: 40px;
+        border-radius: 12px;
+        margin: 20px;
+      }
+
+      .content h1 {
+        font-size: 42px;
+        font-weight: 900;
+        color: #ffbf00;
+        margin-bottom: 30px;
+        text-align: center;
+        border-bottom: 2px solid #ffbf00;
+        padding-bottom: 10px;
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .testimonial-card {
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .testimonial-card .profile-pic {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 15px;
+        overflow: hidden;
+        border-radius: 50%;
+        border: 3px solid #ffbf00;
+      }
+
+      .testimonial-card .profile-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .testimonial-card h3 {
+        margin: 10px 0;
+        font-size: 20px;
+        font-weight: 700;
+        color: #444;
+      }
+
+      .testimonial-card .review {
+        font-size: 16px;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      .star-rating {
+        display: inline-flex;
+        justify-content: center;
+        margin: 10px 0;
+      }
+
+      .star-rating i {
+        color: #ffcc00;
+        font-size: 18px;
+        margin: 0 2px;
+      }
+
+      .navbar {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    background-color: #f7b731;
+    padding: 10px;
+    border-radius: 50px; /* Make the navbar oval */
+    box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar a {
+    color: black;
+    font-size: 20px;
+    margin: 10px 0;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50px; /* Make the individual links oval */
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover, .navbar a.active {
+    background-color: #e6a823;
+}
+
+.navbar a i {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.navbar a.active i {
+    color: white; /* Make the icon white for the active link */
+}
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .content {
+          padding: 20px;
+        }
+
+        .testimonial-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .social-bar {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <img src="profile pic.jpeg" alt="Profile Picture" />
+        <nav>
+          <a href="home.html"><i class="fas fa-home"></i> Home</a>
+          <a href="about2.html"><i class="fas fa-user"></i> About Me</a>
+          <a href="resume2.html"><i class="fas fa-file-alt"></i> Resume</a>
+          <a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a>
+          <a href="testimonial.html"><i class="fas fa-comments"></i> Testimonials</a>
+          <a href="contact2.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+      </div>
+
+      <div class="navbar">
+        <a href="home.html" ><i class="fas fa-home"></i></a>
+        <a href="about2.html" ><i class="fas fa-user"></i></a>
+        <a href="resume2.html"><i class="fas fa-file-alt"></i></a>
+        <a href="portfolio.html" ><i class="fas fa-briefcase"></i></a>
+        <a href="testimonial.html" class="active"><i class="fas fa-comments"></i></a>
+        <a href="contact2.html"><i class="fas fa-envelope"></i></a>
+    </div>
+
+      <!-- Main Content -->
+      <main class="content">
+        <!-- Testimonials Heading -->
+        <h1>TESTIMONIALS</h1>
+
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <div class="profile-pic">
+              <img src="customer4.jpeg" />
+            </div>
+            <h3>Sarah Wilson</h3>
+            <p class="review">
+              "The best experience I've had working with a team. They understood my needs perfectly."
+            </p>
+            <div class="star-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="profile-pic">
+              <img src="customer5.jpeg" />
+            </div>
+            <h3>Emma Taylor</h3>
+            <p class="review">
+              "I couldn't be happier with the outcome! The team's expertise made all the difference."
+            </p>
+            <div class="star-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="profile-pic">
+              <img src="customer6.jpeg"  />
+            </div>
+            <h3>John Adams</h3>
+            <p class="review">
+              "Fantastic service! They went above and beyond to ensure the project met all my requirements."
+            </p>
+            <div class="star-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="profile-pic">
+              <img src="customer7.jpg"/>
+            </div>
+            <h3>Lucas Wright</h3>
+            <p class="review">
+              "I’m extremely impressed with the results! The team was professional and delivered quickly."
+            </p>
+            <div class="star-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script>
+      document.getElementById("home").onclick = function () {
+        window.location.href = "index.html";
+      };
+      document.getElementById("about").onclick = function () {
+        window.location.href = "about.html";
+      };
+      document.getElementById("projects").onclick = function () {
+        window.location.href = "portfolio.html";
+      };
+      document.getElementById("contact").onclick = function () {
+        window.location.href = "contact.html";
+      };
+    </script>
+  </body>
+</html>

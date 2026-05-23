@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Javeria Amjad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f1f1f1;
+            padding: 20px;
+        }
+
+        /* Main Container */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            flex-direction: row;
+            transition: all 0.4s ease;
+        }
+        /* Sidebar */
+.sidebar {
+    background: linear-gradient(to bottom, #f4a261, #ebbe0b);
+    flex: 1 1 300px;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  /* Centering the content vertically */
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+      
+      .sidebar img {
+            width: 120%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 25px;
+        }
+      .sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    justify-content: center; /* Centering nav items horizontally */
+}
+
+
+.sidebar a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 10px;
+            text-align: center;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: rgba(255, 255, 255, 0.35);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+            transform: translateX(10px);
+        }
+
+        /* Content Section */
+        .content {
+            padding: 30px;
+            width: 75%;
+            background-color: #fff;
+            border-radius: 0 20px 20px 0;
+            box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h1 {
+            font-size: 42px;
+        font-weight: 900;
+        color: #ffbf00;
+        margin-bottom: 30px;
+        text-align: center;
+        border-bottom: 2px solid #ffbf00;
+        padding-bottom: 10px;
+        }
+
+        .content p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .content h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 20px 0 15px;
+            color: #333;
+        }
+
+        /* Stats and What I Do Section */
+        .stats-what-i-do {
+            display: flex;
+            gap: 25px;
+            margin-top: 20px;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .stats {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .stat-item {
+            background-color: #ebbe0b;
+            color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            width: calc(50% - 20px);
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-item span {
+            font-size: 32px;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-size: 18px;
+        }
+
+        .what-i-do {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .what-i-do-item {
+            display: flex;
+            align-items: flex-start;
+            width: 30%;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .what-i-do-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .what-i-do-icon {
+            font-size: 45px;
+            color: #ebbe0b;
+            margin-right: 15px;
+        }
+
+        .what-i-do-text h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .what-i-do-text p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .navbar {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    background-color: #f7b731;
+    padding: 10px;
+    border-radius: 50px; /* Make the navbar oval */
+    box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar a {
+    color: black;
+    font-size: 20px;
+    margin: 10px 0;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    border-radius: 50px; /* Make the individual links oval */
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover, .navbar a.active {
+    background-color: #e6a823;
+}
+
+.navbar a i {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.navbar a.active i {
+    color: white; /* Make the icon white for the active link */
+}
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                padding: 20px 20px;
+                border-radius: 0;
+            }
+
+            .content {
+                width: 100%;
+                padding: 20px;
+                border-radius: 0;
+            }
+
+            .stats-what-i-do {
+                flex-direction: column;
+            }
+
+            .stats {
+                flex-direction: column;
+            }
+
+            .stat-item {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .what-i-do-item {
+                width: 100%;
+                margin-bottom: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="sidebar">
+        <img src="profile pic.jpeg" alt="Profile Picture" />
+        <nav>
+          <a href="home.html"><i class="fas fa-home"></i> Home</a>
+          <a href="about2.html"><i class="fas fa-user"></i> About Me</a>
+          <a href="resume2.html"><i class="fas fa-file-alt"></i> Resume</a>
+          <a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a>
+          <a href="testimonial.html"><i class="fas fa-comments"></i> Testimonials</a>
+          <a href="contact2.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+      </div>
+
+    <!-- Content Area -->
+    <div class="content">
+        <!-- About Heading -->
+        <h1>ABOUT ME</h1>
+
+        <!-- Introduction -->
+        <p>I am <strong>Javeria Amjad</strong>, a Software Engineering student passionate about developing efficient and innovative solutions for the digital world.</p>
+
+        <!-- Stats and What I Do Section -->
+        <div class="stats-what-i-do">
+            <!-- Stats Section -->
+            <div class="stats">
+                <div class="stat-item">
+                    <span>3+</span>
+                    <p>Years of Learning</p>
+                </div>
+                <div class="stat-item">
+                    <span>15+</span>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                    <span>1K+</span>
+                    <p>Connections</p>
+                </div>
+                <div class="stat-item">
+                    <span>50+</span>
+                    <p>Collaborations</p>
+                </div>
+            </div>
+
+            <!-- What I Do Section -->
+            <div class="what-i-do">
+                <div class="what-i-do-item">
+                    <i class="what-i-do-icon fas fa-laptop-code"></i>
+                    <div class="what-i-do-text">
+                        <h3>Frontend Development</h3>
+                        <p>Creating responsive and user-friendly web interfaces with clean code.</p>
+                    </div>
+                </div>
+
+                <div class="what-i-do-item">
+                    <i class="what-i-do-icon fas fa-cogs"></i>
+                    <div class="what-i-do-text">
+                        <h3>Problem Solving</h3>
+                        <p>Designing efficient algorithms and debugging to deliver robust solutions.</p>
+                    </div>
+                </div>
+
+                <div class="what-i-do-item">
+                    <i class="what-i-do-icon fas fa-chart-line"></i>
+                    <div class="what-i-do-text">
+                        <h3>Analytics & Testing</h3>
+                        <p>Conducting tests and analyzing data to improve system performance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="navbar">
+    <a href="home.html" ><i class="fas fa-home"></i></a>
+    <a href="about2.html" class="active"><i class="fas fa-user"></i></a>
+    <a href="resume2.html"><i class="fas fa-file-alt"></i></a>
+    <a href="portfolio.html"><i class="fas fa-briefcase"></i></a>
+    <a href="testimonial.html"><i class="fas fa-comments"></i></a>
+    <a href="contact2.html"><i class="fas fa-envelope"></i></a>
+</div>
+<script>
+    document.getElementById('home').onclick = function() {
+            window.location.href = 'home.html';
+        };
+    document.getElementById('about').onclick = function() {
+            window.location.href = 'about2.html';
+        };
+    document.getElementById('contact').onclick = function() {
+            window.location.href = 'contact2.html';
+        };
+    document.getElementById('projects').onclick = function() {
+            window.location.href = 'portfolio.html';
+        };
+</script>
+</body>
+</html>
